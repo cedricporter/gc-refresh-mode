@@ -1,7 +1,7 @@
 ;;; lisp-mnt.el --- minor mode for Emacs Lisp maintainers
-     
+
 ;; Copyright (C) 1992 Free Software Foundation, Inc.
-     
+
 ;; Author: Strzelewicz Alexandre <strzelewicz.alexandre@gmail.com>
 ;; Maintainer: Strzelewicz Alexandre <strzelewicz.alexandre@gmail.com>
 ;; Created: 15 Sept 2011
@@ -25,7 +25,7 @@
   ;; Read URL to find on tabs
   (setq url (read-from-minibuffer "Url to refresh: " "http://"))
   ;; Concatenate URL with command
-  (setq gc-refresh-line-cmd (concat "~/.emacs.d/gc-refresh-mode/reload.py " url))
+  (setq gc-refresh-line-cmd (concat "~/.emacs.d/plugins/gc-refresh-mode/reload.py " url))
   ;; Start Chrome with URL given + with the remote option
   (shell-command (concat "chromium-browser " url " --remote-shell-port=9222"))
   ;; Rebind Save keys
