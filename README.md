@@ -11,6 +11,7 @@ Contribute to : http://emacs.vote-system.com/ !
 
 1. You must be on a UNIX system
 2. The command line **chromium-browser** must be accessible from the command line !
+3. Run `pip install remote_webkit_debug` to install dependency.
 
 If all of this is OK so you can install it :
 
@@ -26,7 +27,7 @@ Then add to your .emacs.el :
 # USAGE
 
 * M-x : gc-refresh-mode
-* Type the url 
+* Type the url
 * Then you're OK !
 
 # TODO
@@ -34,4 +35,3 @@ Then add to your .emacs.el :
 - File parsing to get URL to refresh & open directly the right page
 
 MIT licensed
-

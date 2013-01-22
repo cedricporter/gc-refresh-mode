@@ -19,6 +19,7 @@ def main():
     json_tabs = sh.get_tabs()
     tab = sh.pick_tab(json_tabs[0])
     tab.send_command("Page.reload")
+    print 'sent reload command to Chromium'
 
 
 if __name__ == '__main__':

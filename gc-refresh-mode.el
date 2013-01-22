@@ -16,7 +16,7 @@
 (defun refresh-browser()
   (interactive)
   (save-buffer)
-  (async-shell-command gc-refresh-line-cmd)
+  (shell-command gc-refresh-line-cmd)
   )
 
 (defun gc-refresh-mode ()
