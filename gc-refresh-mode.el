@@ -16,7 +16,7 @@
 (defun refresh-browser()
   (interactive)
   (save-buffer)
-  (shell-command gc-refresh-line-cmd)
+  (async-shell-command gc-refresh-line-cmd)
   )
 
 (defun gc-refresh-mode ()
@@ -25,12 +25,12 @@
   ;; Read URL to find on tabs
   (setq url (read-from-minibuffer "Url to refresh: " "http://"))
   ;; Concatenate URL with command
-  (setq gc-refresh-line-cmd (concat "~/.emacs.d/plugins/gc-refresh-mode/reload.py " url))
+  (setq gc-refresh-line-cmd (concat default-directory "reload.py " url))
   ;; Start Chrome with URL given + with the remote option
-  (shell-command (concat "chromium-browser " url " --remote-shell-port=9222"))
+  (async-shell-command (concat "chromium-browser " url " --remote-debugging-port=9222"))
   ;; Rebind Save keys
   (define-key global-map "\C-x\C-s" 'refresh-browser)
-  (print "GC Refresh mode is now READY --- C-x C-s is rebinded to refresh directly Chromium !")
+  (message "GC Refresh mode is now READY --- C-x C-s is rebinded to refresh directly Chromium !")
   )
 
 (provide 'gc-refresh-mode)
